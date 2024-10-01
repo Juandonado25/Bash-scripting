@@ -11,10 +11,14 @@ agregar_elem() {
 }
 
 eliminar_elem() {
-	pos=$1
-	((pos--))
-	unset arreglo["$pos"]
-	arreglo=(${arreglo[*]})
+	if [ $1 -lt ${#arreglo[*]} ]; then
+		pos=$1
+		((pos--))
+		unset arreglo["$pos"]
+		arreglo=(${arreglo[*]})
+	else
+		echo "Numero de elemento invalido"
+	fi
 }
 
 longitud() {
@@ -44,11 +48,13 @@ echo "imprimir: $(imprimir)"
 
 echo "longitud: $(longitud)"
 
-echo "eliminar pos 1 $(eliminar_elem 1)"
+echo "eliminar pos 1"
+eliminar_elem 1
 
 echo "imprimir: $(imprimir)"
 
-echo "inicializar con valores: 4 5 6 7 $(inicializar_Con_Valores 4 5 6 7)"
+echo "inicializar con valores: 4 5 6 7"
+inicializar_Con_Valores 4 5 6 7
 
 echo "imprimir: "
 imprimir
