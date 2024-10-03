@@ -12,13 +12,13 @@ echo "	QuienEsta: muestra los usuarios conectados al sistema."
 read -p "Escriba su eleccion: " selec
 
 case "$selec" in
-	Listar)
+	"Listar")
 		echo "$(ls)"
 		;;
-	DondeEstoy)
+	"DondeEstoy")
 		echo "$(pwd)"
 		;;
-	QuienEsta)
+	"QuienEsta")
 		echo "$(who)"
 		;;
 	*)

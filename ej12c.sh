@@ -2,9 +2,11 @@
 
 #Ejercicio calculadora, ejecuta las 4 operaciones basicas +, -, * y /. Esta calculadora
 #funciona recibendo la operacion y los numeros como parametros.
-#
+
 #Controla que se introduzcan la cantidad de parametros adecuada, tambien  que los operadores y 
 #operandos sean validos
+
+#si se quiere multiplicar se debe ingresar en el parametro el operador como "*".
 
 
 if [ $# -ne 3 ]; then
@@ -26,7 +28,8 @@ if [ "$1" -eq "$1" ] 2>/dev/null  && [ "$3" -eq "$3" ] 2>/dev/null; then
 		echo "No introdujo una operacion valida."
 		exit 1
 	fi
+	exit 0
 else
-	echo "introduzca numeros validos."
+	echo "introduzca operandos validos."
 	exit 1
 fi

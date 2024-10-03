@@ -51,7 +51,7 @@ borrarArchivo() {
 			else
 				unset archivos[$i]
 				archivos=(${archivos[*]})
-				sudo rm "/home/"$1""
+				sudo "/home/"$1""
 				return 0
 			fi
 		fi			

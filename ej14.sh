@@ -34,6 +34,7 @@ if [ -e $directorio ] && [ -d $directorio ]; then
 			fi
 		fi
 	done
+	exit 0
 else
 	echo "Ingrese un directorio valido."
 	exit 1
