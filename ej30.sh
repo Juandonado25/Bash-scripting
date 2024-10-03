@@ -17,4 +17,5 @@ for arch in ${archivos[*]}; do
 		echo "Se movio $arch"
 	fi
 done
+
 exit 0

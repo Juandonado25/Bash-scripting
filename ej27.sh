@@ -2,15 +2,17 @@
 #
 #Implementa la opreaciones basicas sobre arreglos.
 
+#Pruebo diferentes formas de declarar las funciones.
+
 inicializar() {
 	arreglo=()
 }
 
-agregar_elem() {
+function agregar_elem {
 	arreglo=(${arreglo[*]} $1)
 }
 
-eliminar_elem() {
+eliminar_elem(){
 	if [ $1 -lt ${#arreglo[*]} ]; then
 		pos=$1
 		((pos--))
@@ -21,7 +23,7 @@ eliminar_elem() {
 	fi
 }
 
-longitud() {
+function longitud {
 	echo "${#arreglo[*]}"
 }
 

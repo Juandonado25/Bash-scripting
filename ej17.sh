@@ -7,6 +7,8 @@
 #guardo todos los archivos en un array
 archivos=($(ls))
 
-for archivo in ${archivos[@]}; do
+for archivo in ${archivos[*]}; do
 	echo "$(echo "$archivo" | tr "a-zA-Z" "A-Za-z" | tr -d "aA")"
 done
+
+exit 0

@@ -13,12 +13,12 @@
 #archivo del arreglo y tambien del FileSystem. Se valida que el archivo exist en el arreglo. En caso de
 #no existir, imprime el mensaje de error "Archivo no encontrado" y como valor de retorno 10
 
-archivos=($(ls /home/*.doc | cut -d "/" -f 3))
+archivos=($(ls $HOME/*.doc | cut -d "/" -f 4))
 
 verArchivo() {
 	for arch in ${archivos[*]}; do
 		if [ $arch = "$1" ]; then
-			echo "$(cat /home/$1)"
+			echo "$(cat $HOME/$1)"
 			return 0
 		fi
 	done
@@ -41,7 +41,7 @@ borrarArchivo() {
 		echo "Seleccion invalida"
 		return 9
 	fi
-
+	
 	for (( i=0; i<${#archivos[*]}; i++)); do
 		if [ "$1" == "${archivos[$i]}" ]; then
 			if [ $sel == "Si" ]; then
@@ -51,7 +51,7 @@ borrarArchivo() {
 			else
 				unset archivos[$i]
 				archivos=(${archivos[*]})
-				sudo "/home/"$1""
+				rm "$HOME/"$1""
 				return 0
 			fi
 		fi			
@@ -64,3 +64,5 @@ borrarArchivo() {
 borrarArchivo arch2.doc
 
 cantidadArchivos
+
+exit 0

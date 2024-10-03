@@ -12,6 +12,7 @@ fi
 
 indice=1
 inexistente=0
+
 for param in $@; do
 	if ((indice & 2 != 0)); then
 		if [ -e $param ]; then
@@ -28,3 +29,5 @@ for param in $@; do
 done
 
 echo "$inexistente objetos no existian."
+
+exit 0

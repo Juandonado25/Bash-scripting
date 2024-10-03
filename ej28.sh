@@ -30,6 +30,7 @@ if [ -e $1 ]; then
 		fi
 	done
 	echo "archivos con permiso de escritura $escritura y lectura $lectura."
+	exit 0
 else
 	echo "No existe el directorio."
 	exit 4

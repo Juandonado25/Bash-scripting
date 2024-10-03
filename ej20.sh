@@ -16,7 +16,7 @@ pop() {
 
 length() {
 	long=${#stack[@]}
-	echo "La longitud de la stack es $long"
+	echo "La longitud de la pila es $long"
 }
 
 print() {
